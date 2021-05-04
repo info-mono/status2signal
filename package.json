@@ -1,0 +1,7 @@
+{
+  "name": "status2signal",
+  "version": "1.0.0",
+  "description": "Status code to signal name converter",
+  "global": "true",
+  "install": "make install"
+}

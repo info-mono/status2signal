@@ -1,0 +1,81 @@
+#!/bin/sh
+
+#        __       __             ___        _                __
+#   ___ / /____ _/ /___ _____   |_  |  ___ (_)__ ____  ___ _/ /
+#  (_-</ __/ _ `/ __/ // (_-<  / __/  (_-</ / _ `/ _ \/ _ `/ /
+# /___/\__/\_,_/\__/\_,_/___/ /____/ /___/_/\_, /_//_/\_,_/_/
+#                                          /___/
+
+# File:         status2signal
+# Description:  Status code to signal name converter
+# Author:       NNB
+#               └─ https://github.com/NNBnh
+# URL:          https://github.com/NNBnh/status2signal
+# License:      GPLv3
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+# Values
+for status in "$@"; do
+	case "$status" in
+		'129') signal='SIGHUP'    ;;
+		'130') signal='SIGINT'    ;;
+		'131') signal='SIGQUIT'   ;;
+		'132') signal='SIGILL'    ;;
+		'133') signal='SIGTRAP'   ;;
+		'134') signal='SIGABRT'   ;;
+		'135') signal='SIGBUS'    ;;
+		'136') signal='SIGFPE'    ;;
+		'137') signal='SIGKILL'   ;;
+		'138') signal='SIGUSR1'   ;;
+		'139') signal='SIGSEGV'   ;;
+		'140') signal='SIGUSR2'   ;;
+		'141') signal='SIGPIPE'   ;;
+		'142') signal='SIGALRM'   ;;
+		'143') signal='SIGTERM'   ;;
+		'144') signal='SIGSTKFLT' ;;
+		'145') signal='SIGCHLD'   ;;
+		'146') signal='SIGCONT'   ;;
+		'147') signal='SIGSTOP'   ;;
+		'148') signal='SIGTSTP'   ;;
+		'149') signal='SIGTTIN'   ;;
+		'150') signal='SIGTTOU'   ;;
+		'151') signal='SIGURG'    ;;
+		'152') signal='SIGXCPU'   ;;
+		'153') signal='SIGXFSZ'   ;;
+		'154') signal='SIGVTALRM' ;;
+		'155') signal='SIGPROF'   ;;
+		'156') signal='SIGWINCH'  ;;
+		'157') signal='SIGIO'     ;;
+		'158') signal='SIGPWR'    ;;
+		'159') signal='SIGSYS'    ;;
+		*)
+			if printf '%d' "$status" >/dev/null; then
+				signal="$status"
+			else
+				exit 1
+			fi
+		;;
+	esac
+
+	SIGNALS="${SIGNALS:+$SIGNALS\n}$signal"
+done
+
+
+# Start
+printf "$SIGNALS"
+
+
+exit 0
