@@ -1,16 +1,16 @@
 #!/bin/sh
 
-#        __       __             ___        _                __
-#   ___ / /____ _/ /___ _____   |_  |  ___ (_)__ ____  ___ _/ /
-#  (_-</ __/ _ `/ __/ // (_-<  / __/  (_-</ / _ `/ _ \/ _ `/ /
-# /___/\__/\_,_/\__/\_,_/___/ /____/ /___/_/\_, /_//_/\_,_/_/
+#        __       __           ___      _                __
+#   ___ / /____ _/ /___ _____ |_  |___ (_)__ ____  ___ _/ /
+#  (_-</ __/ _ `/ __/ // (_-</ __/(_-</ / _ `/ _ \/ _ `/ /
+# /___/\__/\_,_/\__/\_,_/___/____/___/_/\_, /_//_/\_,_/_/
 #                                          /___/
 
 # File:         status2signal
-# Description:  Status code to signal name converter
+# Description:  Status code to signal name translate
 # Author:       NNB
 #               └─ https://github.com/NNBnh
-# URL:          https://github.com/NNBnh/status2signal
+# URL:          https://github.com/info-mono/status2signal
 # License:      GPLv3
 
 #    This program is free software: you can redistribute it and/or modify
@@ -30,6 +30,10 @@
 # Values
 for status in "$@"; do
 	case "$status" in
+		'0')                      ;;
+		'2')   signal='USAGE'     ;;
+		'126') signal='NOPERM'    ;;
+		'127') signal='NOTFOUND'  ;;
 		'129') signal='SIGHUP'    ;;
 		'130') signal='SIGINT'    ;;
 		'131') signal='SIGQUIT'   ;;
@@ -63,7 +67,7 @@ for status in "$@"; do
 		'159') signal='SIGSYS'    ;;
 		*)
 			if printf '%d' "$status" >/dev/null; then
-				signal="$status"
+				signal="ERROR"
 			else
 				exit 1
 			fi
@@ -75,7 +79,7 @@ done
 
 
 # Start
-printf "$SIGNALS"
+printf '%s' "$SIGNALS"
 
 
 exit 0
