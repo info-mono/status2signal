@@ -1,6 +1,6 @@
 <h1 align="center"><code>status2signal</code></h1>
 <p align="center">Status code to signal name translate</p>
-<p align="center"><a href="https://github.com/info-mono/status2signal/blob/main/LICENSE"><img src="https://img.shields.io/github/license/info-mono/status2signal?labelColor=383838&color=585858&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%23585858.svg?labelColor=383838&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
+<p align="center"><a href="https://github.com/info-mono/status2signal/blob/main/LICENSE"><img src="https://img.shields.io/github/license/info-mono/status2signal?labelColor=383838&color=585858&style=for-the-badge" alt="License: GPL-3.0"></a> <a href="https://gist.github.com/NNBnh/9ef453aba3efce26046e0d3119dab5a7#development-completed"><img src="https://img.shields.io/badge/development-completed-%23585858.svg?labelColor=383838&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></a></p>
 <p align="center"><a href="https://github.com/info-mono/status2signal/watchers"><img src="https://img.shields.io/github/watchers/info-mono/status2signal?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/status2signal/stargazers"><img src="https://img.shields.io/github/stars/info-mono/status2signal?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/status2signal/network/members"><img src="https://img.shields.io/github/forks/info-mono/status2signal?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/status2signal/issues"><img src="https://img.shields.io/github/issues/info-mono/status2signal?labelColor=383838&color=585858&style=flat-square"></a></p>
 
 ## 💡 About
@@ -8,19 +8,17 @@
 
 ## 🚀 Setup
 ### 🧾 Dependencies
-- `sh` to process
+- [Unix commands](https://en.wikipedia.org/wiki/List_of_Unix_commands) to process
 
 ### 📥 Installation
 #### 🔧 Manually
-- Option 1: using `curl`
-
+Option 1: using `curl`
 ```sh
 curl https://raw.githubusercontent.com/info-mono/status2signal/main/bin/status2signal > ~/.local/bin/status2signal
 chmod +x ~/.local/bin/status2signal
 ```
 
-- Option 2: using `git`
-
+Option 2: using `git`
 ```sh
 git clone https://github.com/info-mono/status2signal.git ~/.local/share/status2signal
 ln -s ~/.local/share/status2signal/bin/status2signal ~/.local/bin/status2signal
@@ -28,13 +26,11 @@ ln -s ~/.local/share/status2signal/bin/status2signal ~/.local/bin/status2signal
 
 #### 📦 Package manager
 For [`bpkg`](https://github.com/bpkg/bpkg) user:
-
 ```sh
 bpkg install info-mono/status2signal
 ```
 
 For [Basher](https://github.com/bpkg/bpkg) user:
-
 ```sh
 basher install info-mono/status2signal
 ```
@@ -43,13 +39,11 @@ basher install info-mono/status2signal
 
 ## ⌨️ Usage
 Run 'status2signal' in the terminal:
-
 ```sh
 status2signal STATUSCODES
 ```
 
 Here is the list of statuses and signals that they will be translated to:
-
 |Status|Signal     |
 |------|-----------|
 |`0`   |empty      |
