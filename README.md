@@ -24,12 +24,12 @@ ln -s ~/.local/share/status2signal/bin/status2signal ~/.local/bin/status2signal
 ```
 
 #### 📦 Package manager
-For [`bpkg`](https://github.com/bpkg/bpkg) user:
+For [Bpkg](https://github.com/bpkg/bpkg) user:
 ```sh
 bpkg install info-mono/status2signal
 ```
 
-For [Basher](https://github.com/bpkg/bpkg) user:
+For [Basher](https://github.com/basherpm/basher) user:
 ```sh
 basher install info-mono/status2signal
 ```
